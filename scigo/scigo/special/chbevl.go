@@ -34,8 +34,8 @@ package special
 // Copyright 1985, 1987 by Stephen L. Moshier
 // Direct inquiries to 30 Frost Street, Cambridge, MA 02140
 
-// Chebyshev evaluates the Chebyshev series
-func Chebyshev(x float64, array []float64, n int) float64 {
+// Chbevl evaluates the Chbevl series
+func Chbevl(x float64, array []float64, n int) float64 {
 	var b0, b1, b2 float64
 	var i int
 	var p int
