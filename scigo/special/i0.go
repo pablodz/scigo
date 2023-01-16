@@ -53,7 +53,7 @@ package special
 
 import "math"
 
-// I0e returns the exponentially scaled modified Bessel
+// I0 returns the exponentially scaled modified Bessel
 // function of order zero of the argument.
 func I0(x float64) float64 {
 	var y float64
