@@ -5,7 +5,8 @@ import (
 )
 
 func BenchmarkChbevl(b *testing.B) {
+	x := 3.14
 	for i := 0; i < b.N; i++ {
-		Chbevl(3.14, A, len(A))
+		Chbevl(x, A, len(A))
 	}
 }
