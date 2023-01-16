@@ -1,7 +1,6 @@
 package windows
 
 import (
-	"fmt"
 	"math"
 
 	"github.com/pablodz/scigo/scigo/special"
@@ -54,32 +53,5 @@ func Kaiser(M int, beta float64, sym bool) ([]float64, error) {
 	w = _truncate(w, needsTrunc)
 
 	return w, nil
-
-}
-
-// KaiserBesselDerived returns the Kaiser-Bessel window
-// Parameters:
-//   - M: the number of points in the window
-//   - beta: the beta parameter, used if sym is false.
-//   - sym: if true, generates a symmetric window, for use in filter design.
-//     Otherwise, generates a periodic window, for use in spectral analysis.
-//
-// Returns:
-//   - out: the window, with the maximum value normalized to 1 (though the value 1
-//     does not appear if sym is True)
-func KaiserBesselDerived(M int, beta float64, sym bool) ([]float64, error) {
-
-	if !sym {
-		return nil, fmt.Errorf(KaiserBesselNotSymmetricError)
-	} else if M < 1 {
-		return []float64{}, nil
-	} else if M%2 == 0 {
-		return nil, fmt.Errorf(NumPointsEvenError)
-	}
-
-	kaiserWindow := make([]float64, M/2+1)
-	kaiserWindow = kaiserWindow[:M/2+1]
-
-	return kaiserWindow, nil
 
 }
