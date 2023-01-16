@@ -13,6 +13,7 @@ jobs:
 
       - name: Tag
         run: |
+          git checkout ${GITHUB_REF}
           VERSION_FILE=".version"
           VERSION_VALUE=$(cat $VERSION_FILE)
           MAX_BRANCH_LENGTH=40
