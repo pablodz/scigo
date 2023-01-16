@@ -18,7 +18,6 @@ import (
 //   - out: the window, with the maximum value normalized to 1 (though the value 1
 //     does not appear if sym is True)
 func KaiserBesselDerived(M int, beta float64, sym bool) ([]float64, error) {
-
 	if !sym {
 		return nil, fmt.Errorf(KaiserBesselNotSymmetricError)
 	} else if M < 1 {
@@ -51,5 +50,4 @@ func KaiserBesselDerived(M int, beta float64, sym bool) ([]float64, error) {
 	copy(w[len(kaiserWindowCum):], kaiserWindowCum)
 
 	return w, nil
-
 }

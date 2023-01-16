@@ -7,8 +7,10 @@ import (
 	"gonum.org/v1/gonum/floats"
 )
 
-const KaiserBesselNotSymmetricError = "scigo: Kaiser-Bessel window only implemented for symmetric windows"
-const NumPointsEvenError = "scigo: Kaiser-Bessel Derived windows are only defined for even number "
+const (
+	KaiserBesselNotSymmetricError = "scigo: Kaiser-Bessel window only implemented for symmetric windows"
+	NumPointsEvenError            = "scigo: Kaiser-Bessel Derived windows are only defined for even number "
+)
 
 // Kaiser returns the Kaiser window
 // Parameters:
@@ -21,7 +23,6 @@ const NumPointsEvenError = "scigo: Kaiser-Bessel Derived windows are only define
 //   - out: the window, with the maximum value normalized to 1 (though the value 1
 //     does not appear if sym is True)
 func Kaiser(M int, beta float64, sym bool) ([]float64, error) {
-
 	ok, err := _len_guards(M)
 	if err != nil {
 		return nil, err
@@ -53,5 +54,4 @@ func Kaiser(M int, beta float64, sym bool) ([]float64, error) {
 	w = _truncate(w, needsTrunc)
 
 	return w, nil
-
 }

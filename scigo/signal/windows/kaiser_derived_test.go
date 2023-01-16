@@ -7,7 +7,6 @@ import (
 )
 
 func TestKaiserDerived(t *testing.T) {
-
 	tests := []struct {
 		name string
 		M    int
@@ -53,7 +52,6 @@ func TestKaiserDerived(t *testing.T) {
 			if !floats.EqualApprox(got, tt.want, 1e-14) {
 				t.Errorf("Kaiser() = %v, want %v", got, tt.want)
 			}
-
 		})
 	}
 }
